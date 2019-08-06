@@ -35,13 +35,13 @@
             icon: 'icon-shujufenxi',
             index: 'demo',
             show: true,
-            title: '数据统计'
+            title: '表格'
           },
           {
             icon: 'icon-guanligudong',
-            index: 'taskList',
+            index: 'demoTable',
             show: true,
-            title: '任务管理'
+            title: '表单'
           },
           {
             icon: 'icon-zhiliangfenxi',

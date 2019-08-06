@@ -7,6 +7,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import axios from './axios/axios.js'
 import urls from './axios/serviceUrls'
 
+require('./mock.js')
+
 Vue.config.productionTip = false
 Vue.use(common)
 Vue.use(element)

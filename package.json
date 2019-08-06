@@ -12,6 +12,7 @@
     "core-js": "^2.6.5",
     "element-ui": "^2.10.1",
     "es6-promise": "^4.2.8",
+    "mockjs": "^1.0.1-beta3",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
