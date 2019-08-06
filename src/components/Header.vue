@@ -4,7 +4,9 @@
         <!-- <div class="collapse-btn" @click="collapseChage">
             <i class="el-icon-menu"></i>
         </div> -->
-        <div class="logo" @click="collapseChage"></div>
+        <div class="logo" @click="collapseChage">
+            <img src="https://b-ssl.duitang.com/uploads/item/201501/16/20150116145231_3xcYy.jpeg" alt="">
+        </div>
         <div class="system" @click="top" title="点击返回顶部 ↑">
             管理后台
         </div>
@@ -146,9 +148,9 @@
         width: 100%;
         height: 60px;
         font-size: 22px;
-        color: #6890fe;
+        color: #999;
         overflow: hidden;
-        background: #eee;
+        background: #F3F3F3;
     }
 
     .collapse-btn {
@@ -161,18 +163,26 @@
     .header .logo {
         float: left;
         width: 124px;
-        height: 30px;
-        margin-left: 40px;
-        margin-right: 10px;
-        margin-top: 18px;
+        height: 60px;
         /* background: url('../../assets/img/logo.png') no-repeat; */
         background-size: contain;
     }
 
+    .header .logo img {
+        /* width: 40px;
+        height: 26px; */
+        /* logo自适应 */
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+        cursor: pointer;
+    }
     .header .system {
         float: left;
         font-size: 16px;
-        line-height: 80px;
+        line-height: 60px;
         cursor: pointer;
     }
 

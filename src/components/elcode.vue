@@ -1,4 +1,5 @@
 <template>
+  <!-- 输入框验证码输入 -->
   <div class="ys-verification">
     <div class="input-wrapper" v-for="item in amount" :key="item">
       <input type="number"  @paste="handlePaste" title="code" v-focus="(item - 1) === currentIndex" maxlength="1" @input="handleInput($event,(item-1))" @keyup.delete="onDelete($event,(item-1))"  v-model="code[item-1]">

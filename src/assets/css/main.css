@@ -51,7 +51,7 @@ ul,li{
   overflow-y: auto;
   -webkit-transition: left .3s ease-in-out;
   transition: left .3s ease-in-out;
-  background: #cccccc;
+  background: #eee;
 }
 
 .content {

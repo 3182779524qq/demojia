@@ -42,12 +42,10 @@ export default function install(Vue) {
         confirmButtonClass: options.confirmButtonClass,
         cancelButtonText: options.cancelButtonText,
         confirmButtonText: options.confirmButtonText
+    }).then(() => {
+      typeof options.thenFun === 'function' ? (options.thenFun()) : () => {}
+    }).catch(() => {
+        typeof options.cancelFun === 'function' ? (options.cancelFun()) : () => {}
       })
-      .then(() => {
-        typeof options.thenFun === 'function' ? (options.thenFun()) : ()=>{}
-      })
-      .catch(() => {
-        typeof options.cancelFun === 'function' ? (options.cancelFun()) : ()=>{}
-      });
   }
 }

@@ -20,6 +20,10 @@ export default new Router({
         path: '/demo',
         name: 'demo',
         component: () => import( /* webpackChunkName: "login" */ '../views/demo/demo.vue')
+      },{
+        path: '/demoForm',
+        name: 'demoForm',
+        component: () => import( /* webpackChunkName: "demoForm" */ '../views/demoForm/demoForm.vue')
       }]
     },
     {
@@ -30,12 +34,12 @@ export default new Router({
     {
       path: '/404',
       name: '404',
-      component: () => import( /* webpackChunkName: "login" */ '../views/404.vue')
+      component: () => import( /* webpackChunkName: "404" */ '../views/404.vue')
     },
     {
       path: '/403',
       name: '403',
-      component: () => import( /* webpackChunkName: "login" */ '../views/403.vue')
+      component: () => import( /* webpackChunkName: "403" */ '../views/403.vue')
     }
   ]
 })

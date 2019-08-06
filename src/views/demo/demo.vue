@@ -1,5 +1,5 @@
 <template>
-  <div class="issure_query">
+  <div class="demo_table">
     <div class="query_table">
       <dataTable :flush="fresh" :inSerachFilte="inSerachFilte" :inTableData="tableDataConfig" ref='dataTable'
         @rowClick="tableClickConfig" :inAjax="tableAjaxConfig">
@@ -132,14 +132,14 @@ export default {
 
 </script>
 <style scoped>
-  /* .issure_query {} */
+  /* .demo_table {} */
   .query_header {
     height: 40px;
     margin-bottom: 30px;
   }
 
   .query_table {
-    padding: 27px;
+    /* padding: 27px; */
     /* background: #292C41; */
     border-radius: 8px;
   }

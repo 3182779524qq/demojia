@@ -1,5 +1,5 @@
 <template>
-  <div class="dataTableBox">
+  <div class="cfj_table">
     <el-table :data="tableData.tData" stripe :height="height" :header-cell-style="headercellstyle" :border="border"
       :row-class-name="rowclassname" @cell-dblclick="cellDblclick" :header-cell-class-name="headercellclassname"
       :cell-class-name="cellclassname" :row-style="rowstyle" :cell-style="cellstyle" style="width: 100%"
@@ -106,8 +106,7 @@
           </el-table-column>
           <!--默认数据展示没有type时走这个分支-->
           <el-table-column v-else :key="index" :prop="tit.field" :label="tit.name" :width="tit.width?tit.width:''"
-            :sortable="tit.sortable?true:false" v-show="tit.isHide?false:true"
-            :fixed="tit.fixed?tit.fixed:false">
+            :sortable="tit.sortable?true:false" v-show="tit.isHide?false:true" :fixed="tit.fixed?tit.fixed:false">
             <template slot-scope="scope">
               <span v-html="scope.row[tit.field]?scope.row[tit.field]:'-'"></span>
             </template>
@@ -116,7 +115,7 @@
       </template>
     </el-table>
     <!--分页配置-->
-    <div v-if="ispagination" class="paginationBox">
+    <div v-if="ispagination" class="cfj_pagination">
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" background
         :current-page="ispagination && ajax.data ? ajax.data.pageNumber:''" :page-sizes="[10,20,50,100]"
         :page-size="ispagination && ajax.data ? ajax.data.pageSize:''" layout="total, sizes,jumper, prev, pager, next"
@@ -468,272 +467,34 @@
     }
   }
 
-  .dataTableBox {
+  .cfj_table {
     width: 100%;
     height: 100%;
-    // background: #292C41;
   }
 
 </style>
 <style>
-  .dataTableBox tr th {
-    /* 表头背景 */
-    /* background: #202435 !important; */
-    height: 50px;
-    border: 0;
-    /* border-radius: 8px; */
+/* 清除默认样式 */
+.cfj_table .el-table--border{
+    border: none;
   }
-
-  /* .dataTableBox thead{
-        border-radius: 8px;
-        overflow: hidden;
-        display: block;
-        width: 100%;
-    } */
-  .el-table__header {
-    /* background: #202435; */
+  .cfj_table .cell{
+    text-align: center;
   }
-
-  /* thead tr:first-child th:first-child {
-        border: 0;
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-    }
-
-    thead tr:first-child th:nth-last-child(2) {
-        border-top-right-radius: 8px;
-        border-bottom-right-radius: 8px;
-    } */
-
-  .dataTableBox .rowstylebg {
-    background: rgba(247, 251, 252, 1) !important;
+  .cfj_table .el-table td, .el-table th{
+    padding: 0
   }
-
-  .dataTableBox .el-table__empty-block {
-    /* background: #202435; */
-  }
-
-  .dataTableBox .el-checkbox__inner {
-    width: 15px;
-    height: 15px;
-    border-color: #a5b3bc;
-    border-radius: 0;
-  }
-
-  .dataTableBox .el-table::before {
-    /* background: #292C41; */
-  }
-
-  .dataTableBox .el-table tr {
-    background-color: #fff;
-  }
-
-  .dataTableBox .operationTit div {
-    padding-left: 27%
-  }
-
-  .dataTableBox .operationbts div button {
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .dataTableBox .el-button+.el-button {
-    padding-left: 1.5%;
-  }
-
-  .dataTableBox .pageTotal {
-    padding-left: 20px;
-    height: 31px;
-    line-height: 31px;
-    font-size: 14px;
-    color: #838383;
-  }
-
-  .dataTableBox .pageTotal span {
-    color: #3a3a3a;
-  }
-
-  .dataTableBox .setPagesize .el-input--small .el-input__inner {
-    height: 25px;
-    line-height: 25px;
-  }
-
-  .dataTableBox .setPagesize .el-input__inner {
-    border-color: #838383;
-  }
-
-  .dataTableBox .paginationBox {
-    padding: 30px;
-    position: relative;
+  .cfj_pagination{
     text-align: right;
+    margin-top: 20px;
+  }
+/* 表头设置 */
+  .cfj_table tr th {
+    height: 50px;
   }
 
-  .dataTableBox .paginationBox .el-pagination__total {
-    color: #CDD2F6;
-  }
-
-  .dataTableBox .paginationBox .el-input__inner {
-    background: #4D5379;
-    border: 0;
-    color: #CDD2F6;
-  }
-
-  .dataTableBox .paginationBox .btn-prev,
-  .dataTableBox .paginationBox .btn-next {
-    background: #4D5379;
-    color: #CDD2F6;
-  }
-
-  .dataTableBox .paginationBox .el-pagination {
-    display: inline-block;
-  }
-
-  .dataTableBox .paginationBox .el-pagination__jump {
-    color: #CDD2F6;
-    margin: 0 24px;
-  }
-
-  .dataTableBox .paginationBox .el-pager .number {
-    background: #4D5379;
-    color: #CDD2F6;
-  }
-
-  .dataTableBox .paginationBox .el-pager .number:hover {
-    color: #ffffff !important;
-    background-color: #00B77E
-  }
-
-  .dataTableBox .el-table th {
-    text-align: center;
-    /* border-top: 1px #e5e5e5 solid; */
-    padding: 7px 0;
-    border-right: none;
-  }
-
-  .dataTableBox .el-table td {
-    padding: 5px 0;
-  }
-
-  .dataTableBox .el-table .cell {
-    text-align: center;
-    overflow: unset;
-
-  }
-
-  .dataTableBox .el-dropdown .el-button {
-    padding: 7px 16px;
-    border-radius: 30px;
-  }
-
-  .el-dropdown-menu.optionSelect {
-    min-width: 100px;
-    text-align: center;
-  }
-
-  .el-dropdown-menu.optionSelect .el-dropdown-menu__item {
-    font-size: 12px;
-    line-height: 25px;
-    color: #141414;
-  }
-
-  .el-dropdown-menu.optionSelect .el-dropdown-menu__item span {
-    font-size: 12px;
-    color: #141414;
-  }
-
-  .el-dropdown-menu.optionSelect .el-dropdown-menu__item.is-disabled span {
-    font-size: 12px;
-    color: #bbbbbb;
-  }
-
-  .el-dropdown-menu.optionSelect .el-dropdown-menu__item.is-disabled {
-    cursor: no-drop !important;
-  }
-
-  .dataTableBox .textLineSize1 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-  }
-
-  .dataTableBox .textLineSize2 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-
-  .dataTableBox .textLineSize3 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
-  }
-
-  .dataTableBox .textLineSize4 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
-    overflow: hidden;
-  }
-
-  .dataTableBox .textLineSize5 {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    overflow: hidden;
-  }
-
-  .dataTableBox .cell .el-button--text {
-    padding: 0;
-  }
-
-  .dataTableBox .dangerious {
-    color: #f56c6c;
-  }
-
-  .dataTableBox .el-table--border th,
-  .el-table--border td {
-    border-right: 0;
-  }
-
-  .el-table th.is-leaf,
-  .el-table td {
-    border-bottom: 1px solid #373B56;
-  }
-
-  .is-leaf,
-  .el-table td {
-    /* background: #292C41 !important; */
-  }
-
-  /* #292C41 */
-  .dataTableBox .el-table--group,
-  .el-table--border {
-    border: 0;
-  }
-
-  .el-table--group::after,
-  .el-table--border::after,
-  .el-table::before {
-    content: '';
-    position: absolute;
-    background-color: #292C41;
-    z-index: 0;
-  }
-
-  .paginationBox button span {
-    background: #292C41;
-    color: #515575;
-  }
-
-  .dataTableBox tbody .cell {
-    color: #C9CACF;
-  }
-
-  .dataTableBox .el-table__empty-text {
-    color: #787c9a;
-  }
+  /* .cfj_table .rowstylebg {
+    background: rgba(247, 251, 252, 1) !important;
+  } */
 
 </style>

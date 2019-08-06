@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <el-menu class="sidebar-el-menu" :default-active="onRoutes" background-color="#6890fe" text-color="#ffffff"
+    <el-menu class="sidebar-el-menu" :default-active="onRoutes" background-color="#03849D" text-color="#ffffff"
       :collapse="collapse" active-text-color="#ffffff" unique-opened router>
       <template v-for="item in items">
         <template v-if="item.subs">
@@ -39,7 +39,7 @@
           },
           {
             icon: 'icon-guanligudong',
-            index: 'demoTable',
+            index: 'demoForm',
             show: true,
             title: '表单'
           },
@@ -198,7 +198,7 @@
 
   .el-menu-item.is-active {
     background-color: #ffffff !important;
-    color: #6890fe !important;
+    color: #03849D !important;
   }
 
   .el-menu-item.is-active i {
