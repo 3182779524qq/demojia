@@ -4,15 +4,15 @@ const listData = function () {
     'code': 200,
     'data': {
       list: [{
-          id: 1,
-          name: '张三',
-          age: 12
-        },
-        {
-          id: 2,
-          name: '李四',
-          age: 13
-        }
+        id: 1,
+        name: '张三',
+        age: 12
+      },
+      {
+        id: 2,
+        name: '李四',
+        age: 13
+      }
       ]
     },
     'msg': 'success'
