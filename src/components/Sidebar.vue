@@ -8,8 +8,8 @@
             <template slot="title">
               <i :class="item.icon" class="iconfont"></i><span slot="title">{{ item.title }}</span>
             </template>
-            <template v-if="subItem.show">
-                <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">
+            <template v-for="(subItem,i) in item.subs">
+                <el-menu-item :key="i" :index="subItem.index"  v-if="subItem.show">
                 <i :class="subItem.icon" class="iconfont"></i><span slot="title">{{ subItem.title }}</span>
                 </el-menu-item>
             </template>
@@ -46,13 +46,13 @@ export default {
       {
         icon: 'icon-zhiliangfenxi',
         index: '1',
-        title: '运营管理',
-        show: false,
+        title: '其他',
+        show: true,
         subs: [{
           icon: 'icon-gift-liwu',
-          index: 'operationList',
-          show: false,
-          title: '运营活动'
+          index: 'demoOther',
+          show: true,
+          title: '其他'
         },
         {
           icon: 'icon-kecheng',
@@ -210,7 +210,7 @@ export default {
   }
 
   .el-menu--inline li {
-    background-color: #86a6fe !important;
+    background-color: #05ADCB !important;
   }
 
   .el-menu-item {

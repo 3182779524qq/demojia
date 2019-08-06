@@ -4,6 +4,7 @@ import router from './router/router'
 import common from './components/com.js'//  全局注册自定义组件
 import element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'//  element字体色调
+import './assets/css/element-variables.scss' // 默认主题
 import axios from './axios/axios.js'//  请求响应拦截
 import urls from './axios/serviceUrls'//  请求url地址
 import confirm from './utils/confirm.js'//  自定义封装提示

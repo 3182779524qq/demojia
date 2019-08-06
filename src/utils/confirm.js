@@ -16,6 +16,7 @@ export default function install (Vue) {
       title: options.title, // 标题
       message: options.message || '此操作将永久删除, 是否继续?<strong>这是<i>HTML</i>片段</strong>', // 开启自定义HTML
       dangerouslyUseHTMLString: !options.dangerouslyUseHTMLString, // 开启自定义HTML
+      customClass: options.customClass || '', // MessageBox 的自定义类名
 
       showClose: !options.showClose, // 是否显示右上角关闭按钮
       closeOnClickModal: !options.closeOnClickModal, // 是否可通过点击遮罩关闭
@@ -32,6 +33,7 @@ export default function install (Vue) {
     }
     this.$confirm(options.message, options.title, {
       dangerouslyUseHTMLString: options.dangerouslyUseHTMLString,
+      customClass: options.customClass,
       showClose: options.showClose,
       closeOnClickModal: options.closeOnClickModal,
       closeOnPressEscape: options.closeOnPressEscape,

@@ -25,6 +25,11 @@ export default new Router({
       path: '/demoForm',
       name: 'demoForm',
       component: () => import(/* webpackChunkName: "demoForm" */'../views/demoForm/demoForm.vue')
+    },
+    {
+      path: '/demoOther',
+      name: 'demoOther',
+      component: () => import(/* webpackChunkName: "demoOther" */'../views/demoOther/demoOther.vue')
     }]
   },
   {
