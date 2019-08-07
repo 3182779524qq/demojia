@@ -5,13 +5,16 @@ const listData = function () {
     'data': {
       list: [{
         id: 1,
-        orderNo: '张三',
-        age: 12
+        name: '张三',
+        age: 18,
+        phone: 17779036602,
+        sex: '男',
+        status: 1
       },
       {
         id: 2,
         name: '李四',
-        age: 13
+        age: 18
       }
       ]
     },

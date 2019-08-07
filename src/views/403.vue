@@ -12,13 +12,13 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-      goBack() {
-        this.$router.go(-2);
-      }
+export default {
+  methods: {
+    goBack () {
+      this.$router.go(-2)
     }
   }
+}
 </script>
 
 <style scoped>

@@ -21,19 +21,19 @@ export default {
       tableDataConfig: {
         // 表头及字段配置
         tHead: [{
-          name: '险单号',
-          field: 'orderNo'
+          name: '工号',
+          field: 'id'
         },
         {
-          name: '报险日期',
-          field: 'createTime'
+          name: '姓名',
+          field: 'name'
         },
-        // {
-        //     name: '报险人',
-        //     field: "reportName",
-        // },
         {
-          name: '报险人电话',
+          name: '性别',
+          field: 'sex'
+        },
+        {
+          name: '手机号',
           field: 'phone'
         },
         {
@@ -41,12 +41,10 @@ export default {
           field: 'status',
           type: 'function',
           callback: function (v, row) {
-            if (v === '1' || v === '2' || v === '5' || v === '6') {
-              return '<span style="color: #FEAC74">出勤中</span>'
-            } else if (v === '3' || v === '4' || v === '7') {
-              return '<span style="color: #CDD2F6">已结案</span>'
+            if (v === 1) {
+              return '<span style="color: #FEAC74">在职</span>'
             } else {
-              return '<span style="color: #8389B3">已关闭</span>'
+              return '<span style="color: #CDD2F6">离职</span>'
             }
           }
         },
