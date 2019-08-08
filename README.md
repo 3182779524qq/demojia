@@ -1,22 +1,24 @@
-vue前端开发规范
-统一开发环境
+###vue前端开发规范统一开发环境
 Intellij Idea,webstrome, sublime3,node最新稳定版，淘宝镜像
-技术框架选型
+
+###技术框架选型
 前端框架：vue
 css预编译 ：stylus、less
 css初始化：css-common
-代码版本控制：SVN
+代码版本控制：git
 屏幕适配布局：rem
 
-路由命名
+###路由命名
 
 采用带问号的history路由路径方式命名
 路由及参数名称采用首字母小写的驼峰法命名
 比如：http://www.test.com/ test? name =abc&testId=124
-views 命名
+###views 命名
 views 文件夹下面是由 以页面为单位的 vue 文件 或者 模块文件夹 组成的，放在 src 目录之下，与 components、assets 同级。
 views 下的文件夹命名
 views 下面的文件夹代表着模块的名字
+
+
 由名词组成（car、order、cart）
 单词只能有一个（good: car order cart）（bad: carInfo carpage）
 尽量是名词（good: car）（bad: greet good）
