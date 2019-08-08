@@ -30,6 +30,11 @@ export default new Router({
       path: '/demoOther',
       name: 'demoOther',
       component: () => import(/* webpackChunkName: "demoOther" */'../views/demoOther/demoOther.vue')
+    },
+    {
+      path: '/demoTree',
+      name: 'demoTree',
+      component: () => import(/* webpackChunkName: "demoTree" */'../views/demoTree/demoTree.vue')
     }]
   },
   {

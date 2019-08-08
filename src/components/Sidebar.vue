@@ -56,9 +56,9 @@ export default {
         },
         {
           icon: 'icon-kecheng',
-          index: 'strategyConfiguration',
-          show: false,
-          title: '攻略配置'
+          index: 'demoTree',
+          show: true,
+          title: '树'
         },
         {
           icon: 'icon-pinpaiguanli',
